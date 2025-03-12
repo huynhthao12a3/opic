@@ -15,15 +15,20 @@ let lastSpokenText = '';
 const voiceSelect = document.getElementById('voiceSelect');
 function initVoices() {
     const voices = window.speechSynthesis.getVoices();
-    voices.lang = "en-US"
-    
-    voices.forEach(voice => {
+    // voices.lang = "en-US"
+    // console.log(voices)
+    // console.log(voices.filter(item=> item.lang == "en-US"))
+
+    const newVoices = voices.filter(item=> item.lang == "en-US")
+    newVoices.forEach(voice => {
         const option = document.createElement('option');
         option.value = voice.name;
         option.textContent = voice.name;
         voiceSelect.appendChild(option);
     });
 }
+
+
 
 // 2. Question data
 const questionData = {
