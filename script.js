@@ -11,6 +11,20 @@ let startTime;
 let currentQuestion = '';
 let lastSpokenText = '';
 
+// Voices
+const voiceSelect = document.getElementById('voiceSelect');
+function initVoices() {
+    const voices = window.speechSynthesis.getVoices();
+    voices.lang = "en-US"
+    
+    voices.forEach(voice => {
+        const option = document.createElement('option');
+        option.value = voice.name;
+        option.textContent = voice.name;
+        voiceSelect.appendChild(option);
+    });
+}
+
 // 2. Question data
 const questionData = {
     cooking: {
@@ -225,13 +239,14 @@ function speakQuestion(question) {
     return new Promise((resolve) => {
         const utterance = new SpeechSynthesisUtterance(question);
         utterance.lang = 'en-US';
-
-        const voices = window.speechSynthesis.getVoices();
-        const googleVoice = voices.find(voice => voice.name === 'Google US English');
-        if (googleVoice) {
-            utterance.voice = googleVoice;
-        }
         
+        const selectedVoiceName = voiceSelect.value;
+        const voices = window.speechSynthesis.getVoices();
+        const selectedVoice = voices.find(voice => voice.name === selectedVoiceName);
+        if (selectedVoice) {
+            utterance.voice = selectedVoice;
+        }
+
         utterance.onstart = () => {
             readButton.disabled = true;
             replayButton.disabled = true;
@@ -294,4 +309,5 @@ window.onload = () => {
         return;
     }
     initDropdown();
+    initVoices();
 };
