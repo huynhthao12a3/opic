@@ -227,9 +227,9 @@ function speakQuestion(question) {
         utterance.lang = 'en-US';
 
         const voices = window.speechSynthesis.getVoices();
-        const englishVoice = voices.find(voice => voice.lang === 'en-US');
-        if (englishVoice) {
-            utterance.voice = englishVoice;
+        const googleVoice = voices.find(voice => voice.name === 'Google US English');
+        if (googleVoice) {
+            utterance.voice = googleVoice;
         }
         
         utterance.onstart = () => {
