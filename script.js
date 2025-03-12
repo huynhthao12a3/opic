@@ -226,6 +226,12 @@ function speakQuestion(question) {
         const utterance = new SpeechSynthesisUtterance(question);
         utterance.lang = 'en-US';
 
+        const voices = window.speechSynthesis.getVoices();
+        const englishVoice = voices.find(voice => voice.lang === 'en-US');
+        if (englishVoice) {
+            utterance.voice = englishVoice;
+        }
+        
         utterance.onstart = () => {
             readButton.disabled = true;
             replayButton.disabled = true;
