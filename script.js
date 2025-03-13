@@ -52,7 +52,7 @@ const questionData = {
         ],
         remaining: []
     },
-    homeandfriend: {
+    familyandfriend: {
         original: [
             `
             Talk about a time when you visited a friend or a family member recently. What did you do when you visited them? What was memorable about that visit
@@ -154,6 +154,24 @@ const questionData = {
             `,
             `
             You indicated that you take vacations at home. What do people in your country normally do on their vacations? How has the way they spend vacations changed over the years? Give me specific examples.
+            `
+        ],
+        remaining: []
+    },
+    walk: {
+        original: [
+            `
+            Can you describe a place where you often go for a walk?
+            `,
+            `
+            Where do you usually walk, and why do you like that place?
+            `,
+            `
+            Do you prefer walking alone or with someone else? 
+            Why?
+            `,
+            `
+            Have you ever had a memorable experience while walking?
             `
         ],
         remaining: []
