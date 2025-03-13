@@ -198,6 +198,23 @@ const questionData = {
             `
         ],
         remaining: []
+    },
+    internet: {
+        original: [
+            `
+            How often do you use the internet and for what purposes?
+            `,
+            `
+            What do people normally do on the internet? 
+            Do they play games watch television or watch movies?  
+            Talk about all the things people do online.
+            `,
+            `
+            Tell me about your early experience of surfing the internet. 
+            What do you remember particularly about that experience?
+            `
+        ],
+        remaining: []
     }
 };
 
