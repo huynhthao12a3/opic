@@ -47,6 +47,20 @@ select, button {
     display: none;
 }
 
+form {
+    text-align: left;
+}
+
+#showIntroduceButton {
+    background-color: #fefefe;
+    cursor: pointer;
+}
+
+#readButton, #replayButton {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
 /* Responsive */
 @media only screen and (max-width: 768px) {
     .container {

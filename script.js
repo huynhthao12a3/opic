@@ -5,6 +5,7 @@ const questionSelect = document.getElementById('questionSelect');
 const readButton = document.getElementById('readButton');
 const notification = document.getElementById('notification');
 const replayButton = document.getElementById('replayButton');
+const showIntroduceButton = document.getElementById('showIntroduceButton');
 
 let timerInterval;
 let startTime;
@@ -305,6 +306,7 @@ function padZero(num) {
 // 8. Main handle
 readButton.addEventListener('click', readQuestion);
 replayButton.addEventListener('click', replayQuestion);
+showIntroduceButton.addEventListener('click', showIntroduceHtml);
 
 // 9. Onload, run first
 window.onload = () => {
@@ -316,3 +318,15 @@ window.onload = () => {
     initDropdown();
     initVoices();
 };
+
+
+1
+
+function showIntroduceHtml() {
+  var htmlShow = document.getElementById("html-show");
+  if (htmlShow.style.display === "none") {
+    htmlShow.style.display = "block";
+  } else {
+    htmlShow.style.display = "none";
+  }
+}
