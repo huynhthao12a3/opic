@@ -81,40 +81,6 @@ const questionData = {
         ],
         remaining: []
     },
-    movie: {
-        original: [
-            `
-            In your background survey you indicated that you like to watch movies. What kind of movie do you like, are there any reasons you like specific movies?
-            `,
-            `
-            Tell me about your favorite movie. What is that and what is the story line? Who is the star of the movie and why do you like it?
-            `,
-            `
-            Who is your favorite character from any movie or TV show? Why is that character you describe him or her in detail
-            `,
-            `
-            Describe the theater you go to. What does it look like? Why do you like going there? Tell me everything you can remember.
-            `
-        ],
-        remaining: []
-    },
-    music: {
-        original: [
-            `
-            How often do you listen to music? When and where do you usually listen to music? What kind of music device do you use when listening to music? Tell me all the details.
-            `,
-            `
-            What kind of music do you like? Why? Who is your favorite singer or composer?
-            `,
-            `
-            When and how did you first become interested in listening to music? Was there a special reason? If so, why?
-            `,
-            `
-            Tell me about the special moments or episodes you've experienced while listening to music.
-            `
-        ],
-        remaining: []
-    },
     neighborhood: {
         original: [
             `
@@ -172,6 +138,40 @@ const questionData = {
             `,
             `
             Have you ever had a memorable experience while walking?
+            `
+        ],
+        remaining: []
+    },
+    movie: {
+        original: [
+            `
+            In your background survey you indicated that you like to watch movies. What kind of movie do you like, are there any reasons you like specific movies?
+            `,
+            `
+            Tell me about your favorite movie. What is that and what is the story line? Who is the star of the movie and why do you like it?
+            `,
+            `
+            Who is your favorite character from any movie or TV show? Why is that character you describe him or her in detail
+            `,
+            `
+            Describe the theater you go to. What does it look like? Why do you like going there? Tell me everything you can remember.
+            `
+        ],
+        remaining: []
+    },
+    music: {
+        original: [
+            `
+            How often do you listen to music? When and where do you usually listen to music? What kind of music device do you use when listening to music? Tell me all the details.
+            `,
+            `
+            What kind of music do you like? Why? Who is your favorite singer or composer?
+            `,
+            `
+            When and how did you first become interested in listening to music? Was there a special reason? If so, why?
+            `,
+            `
+            Tell me about the special moments or episodes you've experienced while listening to music.
             `
         ],
         remaining: []
