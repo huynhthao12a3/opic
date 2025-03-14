@@ -98,20 +98,6 @@ const questionData = {
         ],
         remaining: []
     },
-    park: {
-        original: [
-            `
-            You indicated that you go to the park. Where is it located? Describe the park you like to go to in detail.
-            `,
-            `
-            Describe the last time you went to a park. When was it with whom last weekend?
-            `,
-            `
-            Tell me about a memorable event that happened at the park you often go to. When was it? What was the event about? What did you do there at that time? Why was it so memorable? Tell me in as much detail as you can.
-            `
-        ],
-        remaining: []
-    },
     vacation: {
         original: [
             `
@@ -123,6 +109,20 @@ const questionData = {
             `,
             `
             You indicated that you take vacations at home. What do people in your country normally do on their vacations? How has the way they spend vacations changed over the years? Give me specific examples.
+            `
+        ],
+        remaining: []
+    },
+    park: {
+        original: [
+            `
+            You indicated that you go to the park. Where is it located? Describe the park you like to go to in detail.
+            `,
+            `
+            Describe the last time you went to a park. When was it with whom last weekend?
+            `,
+            `
+            Tell me about a memorable event that happened at the park you often go to. When was it? What was the event about? What did you do there at that time? Why was it so memorable? Tell me in as much detail as you can.
             `
         ],
         remaining: []
@@ -145,23 +145,6 @@ const questionData = {
         ],
         remaining: []
     },
-    movie: {
-        original: [
-            `
-            In your background survey you indicated that you like to watch movies. What kind of movie do you like, are there any reasons you like specific movies?
-            `,
-            `
-            Tell me about your favorite movie. What is that and what is the story line? Who is the star of the movie and why do you like it?
-            `,
-            `
-            Who is your favorite character from any movie or TV show? Why is that character you describe him or her in detail
-            `,
-            `
-            Describe the theater you go to. What does it look like? Why do you like going there? Tell me everything you can remember.
-            `
-        ],
-        remaining: []
-    },
     music: {
         original: [
             `
@@ -175,6 +158,23 @@ const questionData = {
             `,
             `
             Tell me about the special moments or episodes you've experienced while listening to music.
+            `
+        ],
+        remaining: []
+    },
+    movie: {
+        original: [
+            `
+            In your background survey you indicated that you like to watch movies. What kind of movie do you like, are there any reasons you like specific movies?
+            `,
+            `
+            Tell me about your favorite movie. What is that and what is the story line? Who is the star of the movie and why do you like it?
+            `,
+            `
+            Who is your favorite character from any movie or TV show? Why is that character you describe him or her in detail
+            `,
+            `
+            Describe the theater you go to. What does it look like? Why do you like going there? Tell me everything you can remember.
             `
         ],
         remaining: []
