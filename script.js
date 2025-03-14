@@ -62,6 +62,9 @@ const questionData = {
             `,
             `
             I would like to know about your friend. What kind of person is he/she? How did you become friends with him or her?
+            `,
+            `
+            Describe two different friends or family members describe each of them in as much detail as you can and then tell me about the things they have in common and the differences between them.
             `
         ],
         remaining: []
@@ -221,10 +224,10 @@ const questionData = {
 // 3. Dropdown Object
 function initDropdown() {
     const questions = Object.keys(questionData);
-    questions.forEach(question => {
+    questions.forEach((question, index) => {
         const option = document.createElement('option');
         option.value = question;
-        option.textContent = question.charAt(0).toUpperCase() + question.slice(1);
+        option.textContent = (index+1) + ". " + question.charAt(0).toUpperCase() + question.slice(1);
         questionSelect.appendChild(option);
     });
     
