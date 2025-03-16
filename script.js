@@ -135,10 +135,12 @@ function initDropdown() {
     });
 
     // Enable multiple selections
-    // questionSelect.setAttribute('multiple', 'true');
+    questionSelect.setAttribute('multiple', 'true');
 
     loadDropdown();
 }
+
+
 
 function loadDropdown() {
     // Get the list of selected topics

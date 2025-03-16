@@ -103,3 +103,13 @@ form {
         font-size: 0.9em; 
     }
 }
+
+#questionSelect label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#questionSelect input[type="checkbox"] {
+    margin-right: 10px;
+}
