@@ -135,7 +135,7 @@ function initDropdown() {
     });
 
     // Enable multiple selections
-    questionSelect.setAttribute('multiple', 'true');
+    // questionSelect.setAttribute('multiple', 'true');
 
     loadDropdown();
 }
@@ -160,7 +160,7 @@ function loadDropdown() {
     replayButton.style.display = 'none';
 }
 
-questionSelect.addEventListener('click', () => {
+questionSelect.addEventListener('change', () => {
     synth.cancel();
     loadDropdown();
 });
