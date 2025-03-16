@@ -1,7 +1,7 @@
 // 1. Variable
 const synth = window.speechSynthesis;
 const timerDisplay = document.getElementById('timer');
-const questionSelect = document.getElementById('questionSelect');
+const questionSelectContainer = document.getElementById('questionSelectContainer'); // Changed to container
 const readButton = document.getElementById('readButton');
 const notification = document.getElementById('notification');
 const replayButton = document.getElementById('replayButton');
@@ -9,7 +9,7 @@ const showIntroduceButton = document.getElementById('showIntroduceButton');
 
 let timerInterval;
 let startTime;
-let currentQuestion = []; // Now an array
+let currentQuestion = [];
 let lastSpokenText = '';
 
 // Voices
@@ -127,28 +127,36 @@ const questionData = {
 // 3. Dropdown Object
 function initDropdown() {
     const questions = Object.keys(questionData);
-    questions.forEach((question, index) => {
-        const option = document.createElement('option');
-        option.value = question;
-        option.textContent = (index+1) + ". " + question.charAt(0).toUpperCase() + question.slice(1);
-        questionSelect.appendChild(option);
-    });
+    questionSelectContainer.innerHTML = ''; // Clear existing checkboxes
 
-    // Enable multiple selections
-    questionSelect.setAttribute('multiple', 'true');
+    questions.forEach((question, index) => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = question;
+        checkbox.id = `topic-${index}`; // Unique ID for each checkbox
+
+        const label = document.createElement('label');
+        label.htmlFor = `topic-${index}`; // Associate label with checkbox
+        label.textContent = (index+1) + ". " + question.charAt(0).toUpperCase() + question.slice(1);
+
+        const container = document.createElement('div'); // Create a container for each checkbox and label
+        container.appendChild(checkbox);
+        container.appendChild(label);
+
+        questionSelectContainer.appendChild(container);
+    });
 
     loadDropdown();
 }
 
-
-
 function loadDropdown() {
-    // Get the list of selected topics
-    console.log("load drodown")
-    const selectedQuestions = Array.from(questionSelect.selectedOptions).map(option => option.value);
+    console.log("loadDropdown")
+    // Get selected topics from checkboxes
+    const selectedQuestions = Array.from(questionSelectContainer.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(checkbox => checkbox.value);
 
-    currentQuestion = selectedQuestions; // Store selected questions in the array
-
+    currentQuestion = selectedQuestions;
+    // console.log("currentQuestion: ", currentQuestion)
     // Initialize 'remaining' array for selected topics
     currentQuestion.forEach(question => {
         if (!questionData[question].remaining) {
@@ -162,24 +170,16 @@ function loadDropdown() {
     replayButton.style.display = 'none';
 }
 
-questionSelect.addEventListener('change', () => {
+// Attach event listener to the container
+questionSelectContainer.addEventListener('change', () => {
     synth.cancel();
     loadDropdown();
 });
 
-// Allow multiple selections without Ctrl key
-questionSelect.addEventListener('mousedown', function(e) {
-    e.preventDefault();
-    const option = e.target;
-    option.selected = !option.selected;
-});
-
 // 4. Read question
 async function readQuestion() {
-     
+    console.log("currentQuestion: ", currentQuestion)
 
-     console.log("currentQuestion: ", currentQuestion )
- 
     if (!currentQuestion || currentQuestion.length === 0) {
         console.error('No question selected');
         notification.classList.remove('hidden');
@@ -194,13 +194,12 @@ async function readQuestion() {
         }
     });
 
+    console.log("remainingQuestions: ", remainingQuestions)
+
     if (remainingQuestions.length === 0) {
         notification.classList.remove('hidden');
         return;
     }
-
-     console.log("remainingQuestions: ", remainingQuestions )
-
 
     const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
     const question = remainingQuestions[randomIndex];
@@ -261,7 +260,6 @@ function speakQuestion(question) {
         synth.speak(utterance);
     });
 }
-
 
 // 6. Reply question
 function replayQuestion() {

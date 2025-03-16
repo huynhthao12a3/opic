@@ -104,12 +104,17 @@ form {
     }
 }
 
-#questionSelect label {
-    display: block;
-    font-size: 16px;
+#questionSelectContainer {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; /
+  }
+  
+  #questionSelectContainer div {
     margin-bottom: 5px;
-}
-
-#questionSelect input[type="checkbox"] {
-    margin-right: 10px;
-}
+  }
+  
+  #questionSelectContainer div label {
+    margin-left: 5px; 
+  }
+  
