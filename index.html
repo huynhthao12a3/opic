@@ -8,24 +8,26 @@
 </head>
 <body>
     <div class="container">
-        <button id="showIntroduceButton">Show Introduce</button>
+        <button id="showIntroduceButton">💁‍♂️Show Introduce</button>
         <div id="html-show" style="display: none;">
             <form action="/action_page.php">
                 <input type="radio" id="html" name="fav_language" value="HTML">
-                <label for="html">1. Chọn giọng nói tùy ý và chọn chủ đề.</label><br>
+                <label for="html">1. Chọn giọng nói tùy ý và chọn chủ đề (có thể chọn nhiều chủ đề cùng 1 lúc).</label><br>
                 <input type="radio" id="css" name="fav_language" value="CSS">
-                <label for="css">2. Nhấn <strong>Start</strong> để nghe random 1 câu hỏi / lần trong bộ đề.</label><br>
+                <label for="css">2. Nhấn <strong>Start</strong> để nghe random 1 câu hỏi / lần trong bộ chủ đề đã chọn.</label><br>
                 <input type="radio" id="javascript" name="fav_language" value="JavaScript">
                 <label for="javascript">3. Nhấn <strong>Read again</strong> để nghe lại câu hỏi vừa rồi.</label><br>
                 <input type="radio" id="csss" name="fav_language" value="CSSS">
                 <label for="csss">4. Khi nghe hết sẽ có thông báo, chọn chủ đề khác hoặc F5 sẽ reset.</label><br>
+                <input type="radio" id="csss1" name="fav_language" value="CSSS1">
+                <label for="csss1" style="color: red;">5. Tính năng đang dần hoàn thiện, nếu có lỗi vui lòng đợi 1 tí và F5 😏</label><br>
               </form>
         </div>
         <br>  
        
         <sup><small>IPHONE: Please choose <strong>Samantha</strong> voice.</small></sup>
         <select id="voiceSelect"></select>
-        <select id="questionSelect"></select>
+        <select id="questionSelect" multiple></select>
         <button id="readButton">Start</button>
         <button id="replayButton" style="display: none;">Read again</button>
         <div id="timer">00:00</div>
